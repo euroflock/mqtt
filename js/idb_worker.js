@@ -245,7 +245,7 @@ function getCountOfDBTableRecords (openedDB, tableName, getCountOfDBTableRecords
 function fetchAndFillRemoteData (openedDB, tableName, fetchAndFillRemoteDataCallback) {
 	var remote_data = [];
 	log(logPrefix + 'fetchRemoteData: remote request for table "' + tableName + '"');
-	remoteRequest('/' + tableName + '.json', function (json_string) {
+	remoteRequest('/mqtt/' + tableName + '.json', function (json_string) {
 		try {
 			remote_data = JSON.parse(json_string);
 		} catch (e) {
